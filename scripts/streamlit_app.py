@@ -42,7 +42,7 @@ def load_data():
     df_aum = pd.DataFrame(aum_records)
 
     # 3. SIP Inflow Data
-    sip_dates = pd.date_range(start='2022-01-01', end='2025-12-31', freq='M')
+    sip_dates = pd.date_range(start='2022-01-01', end='2025-12-31', freq='ME')
     sip_vals = np.linspace(11000, 30500, len(sip_dates)) + np.random.normal(0, 400, len(sip_dates))
     sip_vals[-1] = 31002 # Milestone Dec 2025
     df_sip = pd.DataFrame({'Month': sip_dates, 'Inflow_Cr': sip_vals})
